@@ -1,0 +1,388 @@
+/* ============================================================
+   ULTRA-HIGH VISIBILITY DARK MODE & ANIMATED BACKGROUND
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --color-teal: #00F2A1;
+    --color-violet: #A855F7;
+    --border-purple: rgba(168, 85, 247, 0.45);
+}
+
+/* 1. MAIN BACKGROUND & CANVAS */
+html, body, [data-testid="stAppViewContainer"], [data-testid="stHeader"] {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    background: #0B0E14 !important;
+    background-image: radial-gradient(circle at 50% 0%, #240a3c 0%, #0B0E14 80%) !important;
+    background-attachment: fixed !important;
+    color: #FFFFFF !important;
+}
+
+/* Container Padding & Max Width */
+.block-container {
+    padding-top: 2rem !important;
+    padding-bottom: 3rem !important;
+    max-width: 1180px !important;
+}
+
+/* 2. CARD CONTAINER FIX */
+[data-testid="stVerticalBlockBorderWrapper"] {
+    background: rgba(18, 13, 28, 0.9) !important;
+    backdrop-filter: blur(14px) !important;
+    border: 1.5px solid var(--border-purple) !important;
+    border-radius: 20px !important;
+    padding: 28px !important;
+    box-shadow: 0 16px 36px -10px rgba(139, 47, 201, 0.35), 0 0 25px 0 rgba(0, 242, 161, 0.15) !important;
+}
+
+/* FORCE ALL TEXT INSIDE CARDS TO HIGH VISIBILITY WHITE/CYAN */
+[data-testid="stVerticalBlockBorderWrapper"] p,
+[data-testid="stVerticalBlockBorderWrapper"] span,
+[data-testid="stVerticalBlockBorderWrapper"] h1,
+[data-testid="stVerticalBlockBorderWrapper"] h2,
+[data-testid="stVerticalBlockBorderWrapper"] h3,
+[data-testid="stVerticalBlockBorderWrapper"] div {
+    color: #FFFFFF !important;
+    font-weight: 600 !important;
+}
+
+/* FIX INPUT LABELS (Survey Number, Land Shape, Total Area) */
+[data-testid="stWidgetLabel"] p,
+[data-testid="stWidgetLabel"] span {
+    color: #F8FAFC !important;
+    font-size: 0.95rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.3px !important;
+}
+
+/* 3. INPUT FIELDS & DROPDOWNS */
+div[data-baseweb="input"], div[data-baseweb="select"] {
+    background-color: #F8FAFC !important;
+    border: 2px solid #334155 !important;
+    border-radius: 12px !important;
+}
+
+div[data-baseweb="input"]:focus-within, div[data-baseweb="select"]:focus-within {
+    border-color: var(--color-teal) !important;
+    box-shadow: 0 0 0 3px rgba(0, 242, 161, 0.25) !important;
+}
+
+div[data-baseweb="input"] input, div[data-baseweb="select"] div {
+    color: #020617 !important;
+    font-weight: 800 !important;
+    font-size: 1rem !important;
+}
+
+/* 4. HEADINGS & STEP TEXT */
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: #00F2A1 !important;
+    border-radius: 30px;
+    color: #020617 !important;
+    font-weight: 800;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 12px rgba(0, 242, 161, 0.5);
+}
+
+.hero-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #FFFFFF !important;
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.hero-subtitle {
+    font-size: 1.05rem;
+    color: #E2E8F0 !important;
+    font-weight: 600 !important;
+    line-height: 1.5;
+}
+
+.step-eyebrow {
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #C084FC !important;
+}
+
+.step-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #FFFFFF !important;
+    margin-bottom: 16px;
+}
+
+/* 5. BUTTONS */
+div.stButton > button[kind="primary"] {
+    background: linear-gradient(135deg, #8B2FC9 0%, #631AA0 100%) !important;
+    border: none !important;
+    color: #FFFFFF !important;
+    font-weight: 800 !important;
+    font-size: 1rem !important;
+    padding: 12px 24px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 18px rgba(139, 47, 201, 0.5) !important;
+}
+
+div.stButton > button[kind="primary"]:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.15);
+}
+
+div.stButton > button[kind="secondary"] {
+    background: #00F2A1 !important;
+    border: none !important;
+    color: #020617 !important;
+    font-weight: 800 !important;
+    font-size: 1rem !important;
+    border-radius: 12px !important;
+    padding: 12px 24px !important;
+    box-shadow: 0 4px 15px rgba(0, 242, 161, 0.4) !important;
+}
+
+/* Download Buttons inside card */
+[data-testid="stDownloadButton"] button {
+    background: #F1F5F9 !important;
+    border: 2px solid #8B2FC9 !important;
+    color: #8B2FC9 !important;
+    font-weight: 800 !important;
+    border-radius: 12px !important;
+}
+
+[data-testid="stDownloadButton"] button:hover {
+    background: #8B2FC9 !important;
+    color: #FFFFFF !important;
+}
+
+/* 6. METRIC TILES GRID */
+.tile-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.metric-tile {
+    background: rgba(18, 13, 28, 0.95);
+    border: 2px solid rgba(168, 85, 247, 0.4);
+    border-radius: 16px;
+    padding: 20px 12px;
+    text-align: center;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.5);
+}
+
+.metric-tile:hover {
+    transform: translateY(-3px);
+    border-color: #00F2A1;
+    box-shadow: 0 14px 25px -5px rgba(0, 242, 161, 0.3);
+}
+
+.metric-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(168, 85, 247, 0.2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px auto;
+    font-size: 1.1rem;
+}
+
+.metric-label {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #CBD5E1 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.metric-value {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #00F2A1 !important;
+    margin-top: 2px;
+}
+
+/* 7. SIDEBAR */
+section[data-testid="stSidebar"] {
+    background: #05070B !important;
+    border-right: 1px solid rgba(168, 85, 247, 0.35) !important;
+}
+
+section[data-testid="stSidebar"] p,
+section[data-testid="stSidebar"] span,
+section[data-testid="stSidebar"] div {
+    color: #FFFFFF !important;
+}
+
+.sidebar-brand {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #00F2A1 !important;
+}
+
+.sidebar-nav-item {
+    color: #FFFFFF !important;
+    background: transparent;
+    border-radius: 12px;
+    padding: 10px 14px;
+    margin-bottom: 6px;
+    font-weight: 700 !important;
+}
+
+.sidebar-nav-item.active {
+    background: linear-gradient(135deg, #8B2FC9 0%, #631AA0 100%);
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 14px rgba(139, 47, 201, 0.5);
+}
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.status-dot.online { background-color: #00F2A1; box-shadow: 0 0 10px #00F2A1; }
+.status-dot.offline { background-color: #EF4444; box-shadow: 0 0 10px #EF4444; }
+
+/* ============================================================
+   8. ENHANCED FLOATING ELEMENTS (BUBBLES, SPARKLES, DIAMONDS)
+   ============================================================ */
+.bg-bubbles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.bg-bubbles li {
+    position: absolute;
+    list-style: none;
+    display: block;
+    bottom: -180px;
+    animation: floatUp 18s infinite linear;
+}
+
+/* Glowing Circular Bubbles */
+.bg-bubbles li.bubble {
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,242,161,0.25) 0%, rgba(168,85,247,0.05) 70%);
+    border: 1px solid rgba(0, 242, 161, 0.3);
+    box-shadow: 0 0 15px rgba(0, 242, 161, 0.2);
+}
+
+/* Diamond Floating Shapes */
+.bg-bubbles li.diamond {
+    width: 30px;
+    height: 30px;
+    background: rgba(168, 85, 247, 0.15);
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    transform: rotate(45deg);
+    box-shadow: 0 0 12px rgba(168, 85, 247, 0.3);
+}
+
+/* Twinkling Sparkle Elements */
+.bg-bubbles li.sparkle {
+    width: 12px;
+    height: 12px;
+    background: #00F2A1;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    box-shadow: 0 0 12px #00F2A1;
+}
+
+/* Element Positioning & Timings */
+.bg-bubbles li:nth-child(1) { left: 8%; width: 70px; height: 70px; animation-delay: 0s; }
+.bg-bubbles li:nth-child(2) { left: 18%; animation-delay: 3s; animation-duration: 14s; }
+.bg-bubbles li:nth-child(3) { left: 28%; width: 45px; height: 45px; animation-delay: 6s; }
+.bg-bubbles li:nth-child(4) { left: 42%; animation-delay: 1s; animation-duration: 11s; }
+.bg-bubbles li:nth-child(5) { left: 55%; width: 90px; height: 90px; animation-delay: 4s; }
+.bg-bubbles li:nth-child(6) { left: 68%; animation-delay: 2s; animation-duration: 15s; }
+.bg-bubbles li:nth-child(7) { left: 78%; width: 35px; height: 35px; animation-delay: 8s; }
+.bg-bubbles li:nth-child(8) { left: 88%; animation-delay: 5s; animation-duration: 13s; }
+.bg-bubbles li:nth-child(9) { left: 93%; width: 60px; height: 60px; animation-delay: 2s; }
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-1200px) rotate(540deg);
+        opacity: 0;
+    }
+}
+
+/* ============================================================
+   PERFECT LAYER STACK: BLACK BASE -> VIDEO -> FRONT TEXT
+   ============================================================ */
+
+/* 1. LAYER 1: BASE BLACK BACKGROUND */
+html, body, [data-testid="stAppViewContainer"], .stApp {
+    background-color: #000000 !important; /* Pure black solid base */
+    color: #FFFFFF !important;
+}
+
+/* 2. LAYER 2: MIDDLE VIDEO LAYER */
+#bg-video {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    object-fit: cover !important;
+    z-index: -1 !important;
+    opacity: 0.55 !important;
+    
+    /* Smooth Rendering & Hardware Acceleration Fix */
+    will-change: transform;
+    transform: translateZ(0);
+    image-rendering: -webkit-optimize-contrast;
+    backface-visibility: hidden;
+    perspective: 1000px;
+    filter: brightness(1.1) contrast(1.15) blur(0.5px) !important;
+    
+    pointer-events: none !important;
+}
+
+/* 3. LAYER 3: FRONT CONTENT & GLASS CARDS */
+.block-container {
+    position: relative !important;
+    z-index: 1 !important; /* Keeps text, inputs, and buttons on top */
+}
+
+/* Dashboard Cards (Translucent Glass Effect over Video & Black BG) */
+[data-testid="stVerticalBlockBorderWrapper"] {
+    background: rgba(10, 10, 12, 0.75) !important; /* Semi-transparent black */
+    backdrop-filter: blur(12px) !important; /* Soft blur behind text */
+    border: 1.5px solid rgba(168, 85, 247, 0.4) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Ensure Front Text is Crisp & High Contrast White */
+[data-testid="stVerticalBlockBorderWrapper"] p,
+[data-testid="stVerticalBlockBorderWrapper"] span,
+[data-testid="stVerticalBlockBorderWrapper"] h1,
+[data-testid="stVerticalBlockBorderWrapper"] h2,
+[data-testid="stVerticalBlockBorderWrapper"] h3 {
+    color: #FFFFFF !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9) !important;
+}
