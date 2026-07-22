@@ -34,3 +34,5 @@ architectural-land-app/
 ├── style.css               # Custom CSS for layering & animation
 ├── requirements.txt        # Python package dependencies
 └── README.md               # Project documentation
+
+URL - https://land-boundaries-prediction.onrender.com

@@ -26,7 +26,7 @@ import streamlit.components.v1 as components
 
 APP_NAME = "Land Boundary AI"
 APP_VERSION = "v1.0.0"
-API_BASE_URL = "http://127.0.0.1:8000"
+API_BASE_URL = "https://land-boundaries-prediction.onrender.com"
 PREDICT_ENDPOINT = f"{API_BASE_URL}/predict"
 HEALTH_ENDPOINT = f"{API_BASE_URL}/"
 
